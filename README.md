@@ -22,7 +22,7 @@ Execução
 
 Para executar o projeto, execute o seguinte comando:
 
-python main.py
+python pdf.py
 
 
 
