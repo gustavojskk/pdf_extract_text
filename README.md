@@ -1,34 +1,54 @@
-Este projeto tem como objetivo extrair texto de arquivos PDFs em Python. O projeto utiliza as seguintes bibliotecas:
+Extrair Texto e Gerar Questões de PDFs em Python
 
-PyPDF2: Uma biblioteca para manipulação de arquivos PDF em Python.
-Tabula: Uma biblioteca para extração de tabelas de arquivos PDF em Python.
-Funcionalidades e Demonstração da Aplicação
+Este projeto extrai o texto de um arquivo PDF e gera perguntas baseadas no conteúdo principal. Ele usa as seguintes bibliotecas:
 
-O projeto oferece as seguintes funcionalidades:
+PyMuPDF (fitz): Para extrair o texto dos arquivos PDF.
+NLTK: Para tokenização de sentenças e outras tarefas de processamento de linguagem natural.
+Funcionalidades:
 
-Extração de texto de arquivos PDFs.
-Extração de tabelas de arquivos PDFs.
-A demonstração da aplicação pode ser feita através do arquivo testExtraction.py. Este arquivo lê um arquivo PDF de exemplo e extrai o texto e as tabelas do arquivo.
+Extrair o texto de um arquivo PDF.
+Dividir o texto em tópicos baseados em parágrafos.
+Gerar perguntas para cada tópico, usando as primeiras frases de cada sentença.
+Salvar as perguntas em um arquivo JSON.
+Demonstração:
 
-Pré Requisitos
+O código principal (main.py) demonstra o uso das funções para extrair texto e gerar perguntas a partir do arquivo "khomp.pdf". As perguntas serão salvas em "saida.json".
 
-Para executar o projeto, é necessário ter instalado o Python 3.6 ou superior. Também é necessário instalar as bibliotecas PyPDF2 e Tabula.
+Pré-requisitos:
 
-Para instalar as bibliotecas, execute os seguintes comandos:
+Python 3.x
+Bibliotecas: PyMuPDF (fitz), NLTK
+Instalação:
 
-pip install PyPDF2
-pip install Tabula
-Execução
+Instale o Python e as bibliotecas necessárias:
+pip install fitz nltk
+Baixe os modelos do NLTK:
+python -m nltk download punkt
+Uso:
 
-Para executar o projeto, execute o seguinte comando:
-
+Execute o código principal:
 python pdf.py
+Saída:
 
+O arquivo "saida.json" conterá uma lista de dicionários, cada um representando um tópico e suas respectivas perguntas.
 
+Exemplo de saída:
 
-Bibliotecas
+[
+  {
+    "topic": "O que é a Khomp?",
+    "questions": [
+      "O que é a Khomp?",
+      "Quais são as principais funcionalidades da Khomp?"
+    ]
+  },
+  {
+    "topic": "Instalação da Khomp",
+    "questions": [
+      "Como instalar a Khomp?",
+      "Quais são os requisitos de sistema para a Khomp?"
+    ]
+  },
+  ...
+]
 
-As bibliotecas utilizadas no projeto são:
-
-PyPDF2: https://pypi.org/project/PyPDF2/
-Tabula: https://pypi.org/project/tabula-py/
