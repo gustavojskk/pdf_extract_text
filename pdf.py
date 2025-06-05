@@ -1,9 +1,9 @@
-import fitz  # PyMuPDF
+import fitz
 import json
 import nltk
 from nltk import sent_tokenize
 
-nltk.download('punkt')  # Baixe os modelos necessários
+nltk.download('punkt')
 
 def extract_text_from_pdf(pdf_path):
     text_data = []
@@ -20,7 +20,7 @@ def organize_text_into_topics(text_data):
     topics = []
 
     for page_text in text_data:
-        paragraphs = page_text.split('\n\n')  # Assume que os parágrafos são separados por duas quebras de linha
+        paragraphs = page_text.split('\n\n')
         topics.extend(paragraphs)
 
     return topics
