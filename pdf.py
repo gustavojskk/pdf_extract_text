@@ -45,7 +45,7 @@ def save_to_json(data, json_path):
         json.dump(data, json_file, ensure_ascii=False, indent=2)
 
 if __name__ == "__main__":
-    pdf_path = "khomp.pdf"
+    pdf_path = ""
     json_path = "saida.json"
 
     text_data = extract_text_from_pdf(pdf_path)
